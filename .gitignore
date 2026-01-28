@@ -1,6 +1,6 @@
 chromedriver-mobile
 /apk
-commands.txt
+command.txt
 allure-results/
 .env
 node_modules/

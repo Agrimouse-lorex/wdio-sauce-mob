@@ -13,7 +13,7 @@ export default class LoginPage {
         return $(`//*[@text="PRODUCTS"]`)
     }
     get errorMessage() {
-        return $(`~test-Error message`)
+        return $(`//*[@content-desc="test-Error message"]/*`)
     }
 
     async login(username, password) {
@@ -24,18 +24,15 @@ export default class LoginPage {
     }
     async loginCheck() {
         await expect(this.inventoryPageTitle).toHaveText('PRODUCTS', {ignoreCase: true, asString: true})
-        console.log('Login successful')
     }
-    async errorMessageCheck() {
-        await expect(this.errorMessage).toBeDisplayed()
-        console.log('Login failed, error message displayed')
+    async checkLoginPageOpen() {
+        await this.loginButton.waitForExist({ timeout: 20000 })
+        await expect(this.loginButton).toBeDisplayed({ timeout: 20000 })
     }
     async errorMessageCheckForText(errorText) {
         await expect(this.errorMessage).toHaveText(errorText)
-        console.log('Login failed, error message displayed')
     }
     async verifyPageIsOpen() {
         await expect(this.inventoryPageTitle).toHaveText('PRODUCTS', {ignoreCase: true, asString: true})
-        console.log('Inventory page is open')
     }
 }
