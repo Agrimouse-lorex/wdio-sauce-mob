@@ -1,0 +1,7 @@
+chromedriver-mobile
+/apk
+commands.txt
+allure-results/
+.env
+node_modules/
+allure-report/
