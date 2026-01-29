@@ -23,7 +23,7 @@ export default class LoginPage {
         await this.loginButton.click()
     }
     async loginCheck() {
-        await expect(this.inventoryPageTitle).toHaveText('PRODUCTS', {ignoreCase: true, asString: true})
+        await expect(this.inventoryPageTitle).toHaveText('PRODUCTS', { ignoreCase: true, asString: true })
     }
     async checkLoginPageOpen() {
         await this.loginButton.waitForExist({ timeout: 20000 })
@@ -33,6 +33,6 @@ export default class LoginPage {
         await expect(this.errorMessage).toHaveText(errorText)
     }
     async verifyPageIsOpen() {
-        await expect(this.inventoryPageTitle).toHaveText('PRODUCTS', {ignoreCase: true, asString: true})
+        await expect(this.inventoryPageTitle).toHaveText('PRODUCTS', { ignoreCase: true, asString: true })
     }
 }
